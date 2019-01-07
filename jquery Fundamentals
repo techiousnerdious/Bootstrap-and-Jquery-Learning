@@ -1,0 +1,79 @@
+//to enable the ability to edit multipile styles of .css
+$("item").css({"background-color":"yellow","font-size":"200%"});
+//else for one css item
+$("item").css("background-color":"yellow");
+
+//Jquery for loop
+for (var i=0; i<list.length; i++) {
+  $(list[i]).css("margin-left", (i*50)+ "px");
+}
+//each function acts as the index function above
+
+var list = $(".shift");
+list.each(function(i, item){
+  //$(this) can be replaced by item...
+  $(this).css("margin-left",(i*50) + "px");
+});
+
+//using the ability to load files  with .load
+  function function1(){
+    $(".loadArea").load("scripts/stuffToLoad.php",
+    //you can also pull in smaller sets of information by selecting the html elements. 
+    //ie. stuffToLoad.php h2
+      {
+        action: "info",      
+      },
+      function(){
+        alert("done!");
+      }
+  }
+  
+  //using the find Function  allows you to search decendants of elements in the dom tree.
+  <!doctype html>
+  <html>
+  <head>
+    <title> find demo </title.
+    <script src = "jqueryFile.JS"></script>
+  </head>
+  <body>
+    <span> this will not be read because it is not in a p tag</span>
+    <p><span>Hello</span>, how are you?</p>
+    <p>Who, Me?<span>I'm well</span></p>
+   
+    <script>
+      $().ready(function(){
+        //finds tags in the p that have a span tag
+        $("p").find("span").css("color","red");
+      });
+    </script>
+  </body>
+  
+  //filter functions.
+     var boxes = $("input");
+     boxes.filter(":checked").parent().addClass("red");
+     
+     //ajax function
+      var msg = $("#msgToServer").val();
+      $.ajax({
+        type:"post"
+        url: "scripts/myServer.php",
+        data:{
+          action: "simple"
+          message: msg
+        },
+        success: callback
+      });
+      $("msgToServer").val("");
+      
+      //you can use data type  however, you need to expect that information back.
+      
+      //Running Code When the page Loads
+      basically you can't use Jquery until the DOM is loaded.
+      
+      Child Parent functions.
+      .parent//finds the item parent to the item selected .child finds the child of the element selected.  .find affects all childeren elemnts
+      
+      Working with remote data.
+      
+      
+      
